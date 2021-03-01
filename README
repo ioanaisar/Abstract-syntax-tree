@@ -1,0 +1,30 @@
+Isar Ioana Teodora 323CA
+		
+								AST
+								
+		iocla_atoi:
+
+	Programul retine in registrul edx sirul primit pe stiva. Se va parcurge acesta
+si se va muta fiecare caracter in registrul ebx.  Daca s-a ajung la finalul
+sirului se va sari la label-ul de iesire din functie. Altfel se verifica daca
+primul caracter a fost - ,caz in care se seteaza variabila care indica existenta
+unui numar negativ. Fiecare caracter este transformat in cifra prin scaderea unui
+'0'. Se inmulteste numarul anterior cu 10 si se adauga noua cifra. Dupa parcurgerea
+sirului se verifica daca era un numar negativ, caz in care se inmulteste cu -1. 
+Se retine numarul final in registrul eax.
+
+		create_tree
+
+		Functia va retine in registrul edx sirul primit pe stiva. Se va aloca memorie
+pentru nodul radacina utilizand functia malloc. Se foloseste strtok pentru a retine
+primul operator. Se aloca memorie cu strdup si se plaseaza informatia in nodul
+radacina, pointer-ul catre el fiind retinut in variabila root si registrele eax, ebx.
+		Se apeleaza functia build_tree care va construi arborele recursiv.  Se retine
+in ebx pointerul catre nodul aflat pe stiva.  Daca nodul nu are memorie alocata 
+va sari la label-ul de final pentru a iesi din functie. Altfel va verifica daca exista
+informatie in nod. Daca nu exista o va aloca utilizand strtok si strdup. Se verifica
+daca este un operator sau operand. In cazul unui operand se termina functia.
+Pentru un operator se va apela functia recursiv pentru arborele cu radacina
+in nodul  stang si apoi cu pentru cel drept. Functia retine nodul catre radacina
+curenta in registrul eax. Inainte de fiecare apelare a functiei se va plasa pe 
+stiva registrul ce contine pointer-ul la nodul curent.
